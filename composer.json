@@ -11,9 +11,6 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "sensio/framework-bundle": "*"
-    },
     "autoload": {
         "psr-0": { "Namshi\\VoyeurBundle": "" }
     },
