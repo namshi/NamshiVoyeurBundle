@@ -64,7 +64,7 @@ driver, which will be used by Voyeur.
 
 Last step is to launch Voyeur from the command line:
 
-```
+```bash
 php app/console namshi:voyeur
 ```
 
@@ -73,13 +73,13 @@ php app/console namshi:voyeur
 To generate the diffs between different screenshots
 captured by Voyeur, just trigger the command:
 
-```
+```bash
 php app/console namshi:voyeur:diff path/to/first/screenshots path/to/other/screenshots
 ```
 
 You can also specify the path to save the diffs at:
 
-```
+```bash
 --diff-dir=path/to/diffs
 ```
 
