@@ -1,0 +1,30 @@
+#parameters:
+#    namshi_voyeur:
+#      browsers:
+#        - firefox
+#        - safari
+#        - chrome
+#      urls:
+#        homepage:     "/"
+#        new-arrivals: "new-products"
+#        women:        "women-shoes"
+#      shots_dir: "/Users/xx/Downloads/screenshots"
+#      base_url:       "http://en-ae.namshi.com/"
+#services:
+#    safari:
+#        class:  Behat\Mink\Driver\Selenium2Driver
+#        calls:
+#          - [start]
+#        arguments:
+#          browser: safari
+#    firefox:
+#        class:  Behat\Mink\Driver\Selenium2Driver
+#        calls:
+#          - [start]
+#    chrome:
+#        class:  Behat\Mink\Driver\Selenium2Driver
+#        calls:
+#          - [start]
+#        arguments:
+#          browser: chrome
+#      
