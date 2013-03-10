@@ -11,6 +11,9 @@
         }
     ],
     "minimum-stability": "dev",
+    "require": {
+        "behat/mink-selenium2-driver":  "*",
+    },
     "autoload": {
         "psr-0": { "Namshi\\VoyeurBundle": "" }
     },
