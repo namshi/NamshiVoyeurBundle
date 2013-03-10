@@ -1,0 +1,21 @@
+{
+    "name": "namshi/voyeur-bundle",
+    "type": "symfony-bundle",
+    "description": "A voyeur, but this one is decent enough.",
+    "keywords": ["symfony2 behat mink screenshot"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name":"Alessandro Nadalin",
+            "email":"alex.nadalin@namshi.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "sensio/framework-bundle": "*"
+    },
+    "autoload": {
+        "psr-0": { "Namshi\\VoyeurBundle": "" }
+    },
+    "target-dir": "Namshi/VoyeurBundle"
+}
