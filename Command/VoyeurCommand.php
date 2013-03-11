@@ -45,7 +45,7 @@ EOT
     {   
         $output->writeln(sprintf('<bg=green;options=bold>Voyeur is hungry for...</bg=green;options=bold>'));
         
-        $time           = date('H') . date('i');
+        $time           = date('H') . date('i') . date('s');
         $configuration  = $this->getConfiguration();
         
         foreach ($configuration->get('browsers') as $browser) {
