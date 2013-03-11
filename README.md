@@ -84,3 +84,32 @@ You can also specify the path to save the diffs at:
 ```
 
 otherwise they will be saved at `path/to/other/screenshots`.
+
+## Testing different websites
+
+You can optionally specify different configurations:
+
+``` yml
+parameters:
+    namshi_voyeur:
+      browsers:
+        - firefox
+      urls:
+        homepage:     "/"
+        new-arrivals: "mail"
+      shots_dir: "/Users/xx/Downloads/screenshots"
+      base_url:       "http://google.com/"
+    voyeur_ae:
+      base_url:       "http://google.ae/"
+    voyeur_de:
+      base_url:       "http://google.de/"
+    voyeur_it:
+      base_url:       "http://google.it/"
+```
+and then run Voyeur with the specified configuration:
+
+``` bash
+php app/console namshi:voyeur --config=voyeur_de
+```
+
+The example above will run Voyeur on `google.de`, instead of `.com`.

@@ -10,6 +10,11 @@
 #        women:        "women-shoes"
 #      shots_dir: "/Users/xx/Downloads/screenshots"
 #      base_url:       "http://en-ae.namshi.com/"
+#
+#    voyeur_sa:
+#      base_url:       "http://en-sa.namshi.com/"
+#    voyeur_kw:
+#      base_url:       "http://en-kw.namshi.com/"
 #services:
 #    safari:
 #        class:  Behat\Mink\Driver\Selenium2Driver

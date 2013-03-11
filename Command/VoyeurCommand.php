@@ -18,6 +18,9 @@ class VoyeurCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
+            ->setDefinition(array(
+                new InputOption('config', '', InputOption::VALUE_OPTIONAL, 'A config to load'),
+            ))
             ->setDescription('This command launches the Voyeur')
             ->setHelp(<<<EOT
 The <info>namshi:voyeur</info> command launches a Voyeur, who will basically take screenshots of given URLs.
@@ -33,9 +36,15 @@ EOT
      * 
      * @return \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag 
      */
-    protected function getConfiguration()
+    protected function getConfiguration($config = null)
     {
-        return new ParameterBag($this->getContainer()->getParameter('namshi_voyeur'));
+        if ($config) {
+            $config = array_merge($this->getContainer()->getParameter('namshi_voyeur'), $this->getContainer()->getParameter($config));
+        } else {
+            $config = $this->getContainer()->getParameter('namshi_voyeur');
+        }
+
+        return new ParameterBag($config);
     }
 
     /**
@@ -44,10 +53,10 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {   
         $output->writeln(sprintf('<bg=green;options=bold>Voyeur is hungry for...</bg=green;options=bold>'));
-        
+
         $time           = date('H') . date('i') . date('s');
-        $configuration  = $this->getConfiguration();
-        
+        $configuration  = $this->getConfiguration($input->getOption('config'));
+
         foreach ($configuration->get('browsers') as $browser) {
             $output->writeln(sprintf('<fg=magenta>Boostrapping %s web browser</fg=magenta>', $browser));
             $webdriver = $this->getContainer()->get($browser);
