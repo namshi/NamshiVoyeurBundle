@@ -34,7 +34,7 @@ EOT
     /**
      * Returns the configuration for voyeur.
      * 
-     * @return \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag 
+     * @return \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag
      */
     protected function getConfiguration($config = null)
     {
@@ -51,7 +51,7 @@ EOT
      * @see Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
-    {   
+    {
         $output->writeln(sprintf('<bg=green;options=bold>Voyeur is hungry for...</bg=green;options=bold>'));
 
         $time           = date('H') . date('i') . date('s');
@@ -63,16 +63,16 @@ EOT
             
             foreach ($configuration->get('urls') as $id => $url) {
                 $this->saveScreenshot(
-                    $webdriver, 
-                    $url, 
-                    $id, 
+                    $webdriver,
+                    $url,
+                    $id,
                     $configuration->get('base_url'),
                     $configuration->get('shots_dir'),
                     $browser,
                     $time,
-                    $output        
+                    $output
                 );
-            }            
+            }
             
             $webdriver->stop();
             $output->writeln(sprintf('<info>Tests with %s are over</info>', $browser));
@@ -82,14 +82,15 @@ EOT
     /**
      * Saves the screenshot of the URL $baseUrl/$url, visiting it with the
      * $webdriver.
-     * 
+     *
      * @param object $webdriver
      * @param string $url
+     * @param int    $id
      * @param string $baseUrl
      * @param string $dir
      * @param string $browser
      * @param string $time
-     * @param OutputInterface $output 
+     * @param OutputInterface $output
      */
     protected function saveScreenshot($webdriver, $url, $id, $baseUrl, $dir, $browser, $time, OutputInterface $output)
     {
@@ -106,9 +107,9 @@ EOT
     
     /**
      * Returns the directory where the screenshot will be stored.
-     * It will try to create it if it doesnt phisically exist.
-     * 
-     * @return string 
+     * It will try to create it if it doesn't physically exist.
+     *
+     * @return string
      */
     protected function getScreenshotDirectory($dir, $browser, $time, OutputInterface $output)
     {

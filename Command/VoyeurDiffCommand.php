@@ -59,12 +59,12 @@ EOT
     /**
      * Checks for a file named as $file in the $after folder: if it finds it,
      * a diff is generated into the $diffDir.
-     * 
+     *
      * @param SplFileInfo $file
      * @param string $before
      * @param string $after
      * @param string $diffDir
-     * @param OutputInterface $output 
+     * @param OutputInterface $output
      */
     protected function processFileToBeCompared(\SplFileInfo $file, $before, $after, $diffDir, OutputInterface $output)
     {
